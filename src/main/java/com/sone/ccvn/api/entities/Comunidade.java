@@ -27,13 +27,13 @@ public class Comunidade {
     @Column(name = "razao_social", nullable = false)
     private String razaoSocial;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String cnpj;
 
-    @Column(name = "data_criacao", nullable = false)
+    @Column(name = "data_criacao")
     private Date dataCriacao;
 
-    @Column(name = "data_atualizacao", nullable = false)
+    @Column(name = "data_atualizacao")
     private Date dataAtualizacao;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
