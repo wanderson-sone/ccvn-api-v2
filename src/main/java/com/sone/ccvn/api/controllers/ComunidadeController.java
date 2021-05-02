@@ -2,7 +2,6 @@ package com.sone.ccvn.api.controllers;
 
 import com.sone.ccvn.api.dtos.response.MessageResponseDTO;
 import com.sone.ccvn.api.entities.Comunidade;
-import com.sone.ccvn.api.repositories.ComunidadeRepository;
 import com.sone.ccvn.api.services.ComunidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
