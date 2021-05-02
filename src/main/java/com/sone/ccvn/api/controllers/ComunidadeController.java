@@ -1,4 +1,4 @@
-package com.sone.ccvn.api.Controllers;
+package com.sone.ccvn.api.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
