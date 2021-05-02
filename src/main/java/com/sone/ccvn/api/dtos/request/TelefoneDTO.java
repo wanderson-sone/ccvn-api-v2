@@ -6,6 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -14,7 +19,10 @@ public class TelefoneDTO {
 
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     private TelefoneTipo tipo;
 
-    private String nome;
+    @NotEmpty
+    @Size(min = 13, max = 14)
+    private String numero;
 }
