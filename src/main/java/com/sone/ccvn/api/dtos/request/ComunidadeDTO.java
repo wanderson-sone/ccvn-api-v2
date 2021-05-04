@@ -32,4 +32,6 @@ public class ComunidadeDTO {
     private Boolean status;
 
     private List<TelefoneDTO> telefones;
+
+    private List<EnderecoDTO> enderecos;
 }

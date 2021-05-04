@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "vn_comunidade")
 @Data
 @Builder
 @NoArgsConstructor
@@ -48,7 +49,13 @@ public class Comunidade {
     private Boolean status;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private List<Membro> membros = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Telefone> telefones = new ArrayList<>();
+
+    @OneToMany(mappedBy = "comunidade", fetch = FetchType.LAZY)
+    private List<Endereco> Enderecos = new ArrayList<>();
 
     @Column(name = "created_at")
     @Temporal(TemporalType.DATE)
