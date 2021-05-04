@@ -1,11 +1,10 @@
 package com.sone.ccvn.api.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.sun.istack.NotNull;
+import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,39 +14,59 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Comunidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(nullable = false)
     private String nome;
 
-    @Column(name = "razao_social", nullable = false)
-    private String razaoSocial;
+    @Column(name = "nome_fantasia")
+    private String nomeFantasia;
 
-    @Column(nullable = false, unique = true)
+    @NotNull
+    @Column(name = "razao_social")
+    private String noRazaoSocial;
+
+    @NotNull
+    @Column(name = "cnpj")
     private String cnpj;
 
-    @Column(name = "data_criacao")
-    private Date dataCriacao;
+    @NotNull
+    @Column(name = "insc_estadual")
+    private String inscEstadual;
 
-    @Column(name = "data_atualizacao")
-    private Date dataAtualizacao;
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "data_fundacao")
+    private LocalDate dataFundacao;
+
+    private Boolean status;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Telefone> telefones = new ArrayList<>();
 
+    @Column(name = "created_at")
+    @Temporal(TemporalType.DATE)
+    private Date createdAt;
+
+    @Column(name = "updated_at")
+    @Temporal(TemporalType.DATE)
+    private Date updatedAt;
+
     @PreUpdate
     public void preUpdate() {
-        dataAtualizacao = new Date();
+        updatedAt = new Date();
     }
 
     @PrePersist
     public void prePersist() {
         final Date atual = new Date();
-        dataCriacao = atual;
-        dataAtualizacao = atual;
+        createdAt = atual;
+        updatedAt = atual;
     }
 }
