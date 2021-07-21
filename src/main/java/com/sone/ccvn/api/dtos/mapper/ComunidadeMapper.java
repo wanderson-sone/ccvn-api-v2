@@ -1,18 +1,24 @@
 package com.sone.ccvn.api.dtos.mapper;
 
 import com.sone.ccvn.api.dtos.request.ComunidadeDTO;
+import com.sone.ccvn.api.dtos.request.ComunidadeEntradaDTO;
+import com.sone.ccvn.api.dtos.request.EnderecoDTO;
 import com.sone.ccvn.api.entities.Comunidade;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import com.sone.ccvn.api.entities.Endereco;
+import com.sone.ccvn.api.entities.Localidade;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring")
-public interface ComunidadeMapper {
+@Mapper(componentModel = "spring", uses = {
+        EnderecoMapper.class,
+        TelefoneMapper.class,
+        LocalidadeMapper.class,
+        EstadoMapper.class
+})
+public interface ComunidadeMapper extends EntityMapper<ComunidadeDTO, Comunidade> {
 
-    ComunidadeMapper INSTANCE = Mappers.getMapper(ComunidadeMapper.class);
-
-    @Mapping(target = "dataFundacao", source = "dataFundacao", dateFormat = "dd-MM-yyyy")
-    Comunidade toComunidade(ComunidadeDTO comunidadeDTO);
-
-    ComunidadeDTO comunidadeToComunidadeDTO (Comunidade comunidade);
+    @Mapping(target = "moderador", source = "moderador")
+    @Mapping(target = "fundador", source = "fundador")
+    @Mapping(target = "razaoSocial", source = "razaoSocial")
+    ComunidadeDTO toDto (Comunidade comunidade);
 }

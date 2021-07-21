@@ -4,17 +4,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "vn_estado")
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Estado {
+public class Estado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +25,9 @@ public class Estado {
 
     private String nome;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "estado")
-    private List<Localidade> localidade = new ArrayList<>();
+    private String sigla;
 
-    public Estado(Long id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
+    @JsonIgnore
+    @OneToMany(mappedBy="estado")
+    private List<Localidade> localidades = new ArrayList<>();
 }

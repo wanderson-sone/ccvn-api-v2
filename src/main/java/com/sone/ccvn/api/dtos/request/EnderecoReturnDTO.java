@@ -1,14 +1,17 @@
 package com.sone.ccvn.api.dtos.request;
 
-import com.sone.ccvn.api.entities.Localidade;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-
-@Getter
-@Setter
-public class EnderecoDTO implements Serializable {
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class EnderecoReturnDTO implements Serializable {
 
     private  Long id;
 
@@ -22,9 +25,7 @@ public class EnderecoDTO implements Serializable {
 
     private String bairro;
 
-    private  LocalidadeDTO localidade;
-
     private Long localidade_id;
 
-    //    private Long estado_id;
+    private Long estado_id;
 }

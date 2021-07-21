@@ -4,14 +4,14 @@ import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "vn_comunidade")
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class Comunidade {
 
     @NotNull
     @Column(name = "razao_social")
-    private String noRazaoSocial;
+    private String razaoSocial;
 
     @NotNull
     @Column(name = "cnpj")
@@ -44,18 +44,24 @@ public class Comunidade {
     private String email;
 
     @Column(name = "data_fundacao")
-    private LocalDate dataFundacao;
+    private Date dataFundacao;
+
+    @Column(name = "moderador")
+    private String moderador;
+
+    @Column(name = "fundador")
+    private String fundador;
 
     private Boolean status;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    private List<Membro> membros = new ArrayList<>();
-
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Telefone> telefones = new ArrayList<>();
 
-    @OneToMany(mappedBy = "comunidade", fetch = FetchType.LAZY)
-    private List<Endereco> Enderecos = new ArrayList<>();
+    @OneToMany(mappedBy="comunidade", cascade = CascadeType.ALL)
+    private List<Endereco> enderecos = new ArrayList<>();
+
+    @OneToMany(mappedBy = "comunidade", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ComunidadeDocument> documents = new ArrayList<>();
 
     @Column(name = "created_at")
     @Temporal(TemporalType.DATE)

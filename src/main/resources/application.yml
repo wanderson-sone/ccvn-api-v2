@@ -1,0 +1,43 @@
+#server:
+#port: 8082
+
+
+spring:
+  application:
+    name:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/ccvndb?allowPublicKeyRetrieval=true&sslMode=DISABLED
+    username: root
+    password: Root@123
+
+
+#  jpa
+#    open-in-view
+
+#  liquibase:
+#    change-log: classpath:db/changelog/master.xml
+#    enabled: true
+
+# MySQL
+
+# exibe os comandos SQL
+#spring.jpa.properties.hibernate.show_sql=true
+#spring.jpa.properties.hibernate.use_sql_comments=true
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.jpa.properties.hibernate.type=trace
+
+#spring.liquibase.enabled=true
+#
+#spring.liquibase.change-log=classpath:db/changelog/master.xml
+
+

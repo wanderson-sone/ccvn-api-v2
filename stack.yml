@@ -1,16 +1,16 @@
 version: '3.1'
-#
-#services:
-#
-#  db:
-#    image: mysql
-#    command: --default-authentication-plugin=mysql_native_password
-#    ports:
-#    - 3306:3306
-#    environment:
-#      MYSQL_ROOT_PASSWORD: Root@123
-#    volumes:
-#    - course-dio:/var/lib/mysql
-#
-#volumes:
-#  course-dio:
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: Root@123
+    volumes:
+    - sone-ccvn:/var/lib/mysql
+
+volumes:
+  sone-ccvn:

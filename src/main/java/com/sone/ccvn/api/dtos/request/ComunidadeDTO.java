@@ -1,17 +1,15 @@
 package com.sone.ccvn.api.dtos.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.sone.ccvn.api.entities.ComunidadeDocument;
+import lombok.*;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class ComunidadeDTO {
+@Getter
+@Setter
+public class ComunidadeDTO implements Serializable {
 
     private Long id;
 
@@ -29,9 +27,15 @@ public class ComunidadeDTO {
 
     private String dataFundacao;
 
+    private String moderador;
+
+    private String fundador;
+
     private Boolean status;
+
+    private List<EnderecoDTO> enderecos;
 
     private List<TelefoneDTO> telefones;
 
-    private List<EnderecoDTO> enderecos;
+    private List<ComunidadeDocument> documents;
 }

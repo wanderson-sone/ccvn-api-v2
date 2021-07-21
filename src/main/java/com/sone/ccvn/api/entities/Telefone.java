@@ -1,19 +1,16 @@
 package com.sone.ccvn.api.entities;
 
 import com.sone.ccvn.api.enums.TelefoneTipo;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "vn_telefone")
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 public class Telefone {
 
     @Id
@@ -21,9 +18,15 @@ public class Telefone {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "telefone_tipo" ,nullable = false)
+    @Column(name = "telefone_tipo" , nullable = false)
     private TelefoneTipo tipo;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String numero;
+
+    public Telefone(Long id, TelefoneTipo tipo, String numero) {
+        this.id = id;
+        this.tipo = tipo;
+        this.numero = numero;
+    }
 }
