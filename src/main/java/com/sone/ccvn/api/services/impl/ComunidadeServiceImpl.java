@@ -41,7 +41,7 @@ public class ComunidadeServiceImpl implements ComunidadeService {
     public List<ComunidadeDTO> findAll() {
         List<Comunidade> allComunidades = comunidadeRepository.findAll();
 
-        allComunidades.stream().map(c -> c.getEnderecos()).collect(Collectors.toList());
+        allComunidades.stream().map(Comunidade::getEnderecos).collect(Collectors.toList());
         return allComunidades.stream().map(comunidadeMapper::toDto)
                 .collect(Collectors.toList());
     }

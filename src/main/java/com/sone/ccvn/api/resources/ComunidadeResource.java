@@ -1,11 +1,9 @@
 package com.sone.ccvn.api.resources;
 
-import com.sone.ccvn.api.dtos.mapper.ComunidadeInsertMapper;
+import com.sone.ccvn.api.dtos.mapper.ComunidadeMapper;
 import com.sone.ccvn.api.dtos.request.ComunidadeDTO;
-import com.sone.ccvn.api.dtos.request.ComunidadeEntradaDTO;
 import com.sone.ccvn.api.dtos.request.EnderecoDTO;
 import com.sone.ccvn.api.dtos.response.MessageResponseDTO;
-import com.sone.ccvn.api.entities.Comunidade;
 import com.sone.ccvn.api.services.ComunidadeService;
 import com.sone.ccvn.api.services.ReportService;
 import com.sone.ccvn.api.services.exception.ObjectNotFoundException;
@@ -31,6 +29,8 @@ public class ComunidadeResource {
     private final ComunidadeService service;
 
     private final ReportService reportService;
+
+    private final ComunidadeMapper comunidadeMapper;
 
     @GetMapping
     public List<ComunidadeDTO> listAll() {
@@ -64,7 +64,12 @@ public class ComunidadeResource {
     }
 
     @GetMapping("/report/{format}")
-    public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
+    public ResponseEntity<byte[]> generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
         return reportService.exportReport(format);
     }
+
+//    @GetMapping("/report/{format}")
+//    public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
+//        return reportService.exportReport(format);
+//    }
 }
