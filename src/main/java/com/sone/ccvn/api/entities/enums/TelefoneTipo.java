@@ -1,4 +1,4 @@
-package com.sone.ccvn.api.enums;
+package com.sone.ccvn.api.entities.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

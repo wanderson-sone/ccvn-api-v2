@@ -1,6 +1,5 @@
-package com.sone.ccvn.api.dtos.request;
+package com.sone.ccvn.api.services.dtos.request;
 
-import com.sone.ccvn.api.entities.Localidade;
 import lombok.*;
 
 import java.io.Serializable;

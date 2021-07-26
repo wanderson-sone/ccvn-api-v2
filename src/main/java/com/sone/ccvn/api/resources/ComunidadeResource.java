@@ -1,9 +1,9 @@
 package com.sone.ccvn.api.resources;
 
-import com.sone.ccvn.api.dtos.mapper.ComunidadeMapper;
-import com.sone.ccvn.api.dtos.request.ComunidadeDTO;
-import com.sone.ccvn.api.dtos.request.EnderecoDTO;
-import com.sone.ccvn.api.dtos.response.MessageResponseDTO;
+import com.sone.ccvn.api.services.mapper.ComunidadeMapper;
+import com.sone.ccvn.api.services.dtos.request.ComunidadeDTO;
+import com.sone.ccvn.api.services.dtos.request.EnderecoDTO;
+import com.sone.ccvn.api.services.dtos.response.MessageResponseDTO;
 import com.sone.ccvn.api.services.ComunidadeService;
 import com.sone.ccvn.api.services.ReportService;
 import com.sone.ccvn.api.services.exception.ObjectNotFoundException;

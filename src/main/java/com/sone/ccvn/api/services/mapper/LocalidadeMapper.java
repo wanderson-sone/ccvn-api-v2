@@ -1,6 +1,6 @@
-package com.sone.ccvn.api.dtos.mapper;
+package com.sone.ccvn.api.services.mapper;
 
-import com.sone.ccvn.api.dtos.request.LocalidadeDTO;
+import com.sone.ccvn.api.services.dtos.request.LocalidadeDTO;
 import com.sone.ccvn.api.entities.Localidade;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

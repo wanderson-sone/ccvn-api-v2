@@ -1,4 +1,4 @@
-package com.sone.ccvn.api.dtos.response;
+package com.sone.ccvn.api.services.dtos.response;
 
 import lombok.Builder;
 import lombok.Data;

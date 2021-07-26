@@ -1,14 +1,9 @@
-package com.sone.ccvn.api.dtos.mapper;
+package com.sone.ccvn.api.services.mapper;
 
-import com.sone.ccvn.api.dtos.request.ComunidadeDTO;
-import com.sone.ccvn.api.dtos.request.ComunidadeEntradaDTO;
-import com.sone.ccvn.api.dtos.request.ComunidadeReportDTO;
-import com.sone.ccvn.api.dtos.request.EnderecoDTO;
+import com.sone.ccvn.api.services.dtos.request.ComunidadeDTO;
+import com.sone.ccvn.api.services.dtos.request.ComunidadeReportDTO;
 import com.sone.ccvn.api.entities.Comunidade;
-import com.sone.ccvn.api.entities.Endereco;
-import com.sone.ccvn.api.entities.Localidade;
 import org.mapstruct.*;
-import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 

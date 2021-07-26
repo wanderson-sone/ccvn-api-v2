@@ -1,10 +1,9 @@
-package com.sone.ccvn.api.dtos.request;
+package com.sone.ccvn.api.services.dtos.request;
 
 import com.sone.ccvn.api.entities.ComunidadeDocument;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.List;
 
 @Getter

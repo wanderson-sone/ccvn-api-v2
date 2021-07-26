@@ -1,6 +1,6 @@
 package com.sone.ccvn.api.entities;
 
-import com.sone.ccvn.api.enums.TelefoneTipo;
+import com.sone.ccvn.api.entities.enums.TelefoneTipo;
 import lombok.*;
 
 import javax.persistence.*;

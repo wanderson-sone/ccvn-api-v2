@@ -1,8 +1,8 @@
 package com.sone.ccvn.api.services.impl;
 
-import com.sone.ccvn.api.dtos.mapper.ComunidadeMapper;
-import com.sone.ccvn.api.dtos.request.ComunidadeDTO;
-import com.sone.ccvn.api.dtos.request.ComunidadeReportDTO;
+import com.sone.ccvn.api.services.mapper.ComunidadeMapper;
+import com.sone.ccvn.api.services.dtos.request.ComunidadeDTO;
+import com.sone.ccvn.api.services.dtos.request.ComunidadeReportDTO;
 import com.sone.ccvn.api.services.ComunidadeService;
 import com.sone.ccvn.api.services.ReportService;
 import net.sf.jasperreports.engine.*;

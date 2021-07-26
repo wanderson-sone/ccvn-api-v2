@@ -1,12 +1,8 @@
-package com.sone.ccvn.api.dtos.mapper;
+package com.sone.ccvn.api.services.mapper;
 
-import com.sone.ccvn.api.dtos.request.EnderecoDTO;
+import com.sone.ccvn.api.services.dtos.request.EnderecoDTO;
 import com.sone.ccvn.api.entities.Endereco;
-import com.sone.ccvn.api.entities.Localidade;
-import org.mapstruct.AfterMapping;
-import org.mapstruct.BeforeMapping;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
 
 
 @Mapper(componentModel = "spring", uses ={

@@ -1,16 +1,9 @@
 package com.sone.ccvn.api.services.impl;
 
-import com.sone.ccvn.api.dtos.mapper.ComunidadeMapper;
-import com.sone.ccvn.api.dtos.mapper.EnderecoMapper;
-import com.sone.ccvn.api.dtos.mapper.TelefoneMapper;
-import com.sone.ccvn.api.dtos.request.ComunidadeDTO;
-import com.sone.ccvn.api.dtos.request.EnderecoDTO;
-import com.sone.ccvn.api.dtos.request.TelefoneDTO;
-import com.sone.ccvn.api.dtos.response.MessageResponseDTO;
+import com.sone.ccvn.api.services.mapper.ComunidadeMapper;
+import com.sone.ccvn.api.services.dtos.request.ComunidadeDTO;
+import com.sone.ccvn.api.services.dtos.response.MessageResponseDTO;
 import com.sone.ccvn.api.entities.Comunidade;
-import com.sone.ccvn.api.entities.Endereco;
-import com.sone.ccvn.api.entities.Localidade;
-import com.sone.ccvn.api.entities.Telefone;
 import com.sone.ccvn.api.repositories.*;
 import com.sone.ccvn.api.services.ComunidadeService;
 import com.sone.ccvn.api.services.EnderecoService;
@@ -23,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @Transactional

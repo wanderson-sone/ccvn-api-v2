@@ -1,7 +1,6 @@
-package com.sone.ccvn.api.dtos.request;
+package com.sone.ccvn.api.services.dtos.request;
 
-import com.sone.ccvn.api.enums.TelefoneTipo;
-import com.sun.source.doctree.SerialDataTree;
+import com.sone.ccvn.api.entities.enums.TelefoneTipo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

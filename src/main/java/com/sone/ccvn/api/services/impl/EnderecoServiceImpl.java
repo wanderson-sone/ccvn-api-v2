@@ -1,12 +1,10 @@
 package com.sone.ccvn.api.services.impl;
 
-import com.sone.ccvn.api.dtos.mapper.EnderecoMapper;
-import com.sone.ccvn.api.dtos.request.ComunidadeDTO;
-import com.sone.ccvn.api.dtos.request.EnderecoDTO;
+import com.sone.ccvn.api.services.mapper.EnderecoMapper;
+import com.sone.ccvn.api.services.dtos.request.EnderecoDTO;
 import com.sone.ccvn.api.entities.Endereco;
 import com.sone.ccvn.api.entities.Localidade;
 import com.sone.ccvn.api.repositories.EnderecoRepository;
-import com.sone.ccvn.api.repositories.LocalidadeRepository;
 import com.sone.ccvn.api.services.EnderecoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service

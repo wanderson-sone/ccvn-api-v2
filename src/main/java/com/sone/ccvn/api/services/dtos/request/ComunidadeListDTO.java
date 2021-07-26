@@ -1,4 +1,4 @@
-package com.sone.ccvn.api.dtos.request;
+package com.sone.ccvn.api.services.dtos.request;
 
 import lombok.Getter;
 import lombok.Setter;

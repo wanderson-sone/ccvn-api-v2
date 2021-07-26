@@ -1,11 +1,4 @@
-package com.sone.ccvn.api.dtos.mapper;
-
-import com.sone.ccvn.api.dtos.request.ComunidadeEntradaDTO;
-import com.sone.ccvn.api.entities.Comunidade;
-import com.sone.ccvn.api.entities.Endereco;
-import com.sone.ccvn.api.entities.Localidade;
-import org.springframework.stereotype.Component;
-import java.util.Date;
+package com.sone.ccvn.api.services.mapper;
 
 //@Component
 public class ComunidadeInsertMapper {
